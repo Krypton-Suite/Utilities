@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="c69d81dd-55fa-46f6-8269-6ad69acef566" visible="True" isDefault="true" isSelected="true" title="Welcome to the Krypton Toolkit documentation">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Welcome" />
+    </HelpKeywords>
+  </Topic>
+</Topics>
