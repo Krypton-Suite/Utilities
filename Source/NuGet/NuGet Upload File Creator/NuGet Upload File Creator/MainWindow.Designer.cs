@@ -30,6 +30,7 @@ namespace NuGetUploadFileCreator
         private void InitializeComponent()
         {
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.kbtnOpenInExplorer = new Krypton.Toolkit.KryptonButton();
             this.kbtnGenerateScript = new Krypton.Toolkit.KryptonButton();
             this.kbtnCancel = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,6 +51,7 @@ namespace NuGetUploadFileCreator
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.kbtnOpenInExplorer);
             this.kryptonPanel1.Controls.Add(this.kbtnGenerateScript);
             this.kryptonPanel1.Controls.Add(this.kbtnCancel);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -57,6 +59,16 @@ namespace NuGetUploadFileCreator
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(671, 45);
             this.kryptonPanel1.TabIndex = 0;
+            // 
+            // kbtnOpenInExplorer
+            // 
+            this.kbtnOpenInExplorer.Enabled = false;
+            this.kbtnOpenInExplorer.Location = new System.Drawing.Point(12, 8);
+            this.kbtnOpenInExplorer.Name = "kbtnOpenInExplorer";
+            this.kbtnOpenInExplorer.Size = new System.Drawing.Size(150, 25);
+            this.kbtnOpenInExplorer.TabIndex = 2;
+            this.kbtnOpenInExplorer.Values.Text = "Open in &Explorer";
+            this.kbtnOpenInExplorer.Click += new System.EventHandler(this.kbtnOpenInExplorer_Click);
             // 
             // kbtnGenerateScript
             // 
@@ -66,6 +78,7 @@ namespace NuGetUploadFileCreator
             this.kbtnGenerateScript.Size = new System.Drawing.Size(150, 25);
             this.kbtnGenerateScript.TabIndex = 1;
             this.kbtnGenerateScript.Values.Text = "Generate &Script";
+            this.kbtnGenerateScript.Click += new System.EventHandler(this.kbtnGenerateScript_Click);
             // 
             // kbtnCancel
             // 
@@ -110,6 +123,7 @@ namespace NuGetUploadFileCreator
             this.ktxtScriptName.Name = "ktxtScriptName";
             this.ktxtScriptName.Size = new System.Drawing.Size(472, 23);
             this.ktxtScriptName.TabIndex = 7;
+            this.ktxtScriptName.TextChanged += new System.EventHandler(this.ktxtScriptName_TextChanged);
             // 
             // kryptonLabel3
             // 
@@ -145,6 +159,7 @@ namespace NuGetUploadFileCreator
             this.kbtnViewContents.Size = new System.Drawing.Size(153, 25);
             this.kbtnViewContents.TabIndex = 3;
             this.kbtnViewContents.Values.Text = "V&iew Directory Content";
+            this.kbtnViewContents.Click += new System.EventHandler(this.kbtnViewContents_Click);
             // 
             // kbtnBrowse
             // 
@@ -163,6 +178,7 @@ namespace NuGetUploadFileCreator
             this.ktxtPackagePath.Name = "ktxtPackagePath";
             this.ktxtPackagePath.Size = new System.Drawing.Size(472, 23);
             this.ktxtPackagePath.TabIndex = 1;
+            this.ktxtPackagePath.TextChanged += new System.EventHandler(this.ktxtPackagePath_TextChanged);
             // 
             // kryptonLabel1
             // 
@@ -209,6 +225,7 @@ namespace NuGetUploadFileCreator
         private Krypton.Toolkit.KryptonButton kbtnBrowse;
         private Krypton.Toolkit.KryptonTextBox ktxtPackagePath;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonButton kbtnOpenInExplorer;
     }
 }
 

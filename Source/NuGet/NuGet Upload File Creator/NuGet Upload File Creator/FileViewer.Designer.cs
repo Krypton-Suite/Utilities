@@ -30,21 +30,37 @@ namespace NuGetUploadFileCreator
         private void InitializeComponent()
         {
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
+            this.kbtnCancel = new Krypton.Toolkit.KryptonButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
-            this.kryptonListBox1 = new Krypton.Toolkit.KryptonListBox();
+            this.klbFiles = new Krypton.Toolkit.KryptonListBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
+            this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
             this.kryptonPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.kbtnCancel);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 591);
             this.kryptonPanel1.Name = "kryptonPanel1";
             this.kryptonPanel1.Size = new System.Drawing.Size(677, 45);
             this.kryptonPanel1.TabIndex = 1;
+            // 
+            // kbtnCancel
+            // 
+            this.kbtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.kbtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.kbtnCancel.Location = new System.Drawing.Point(293, 10);
+            this.kbtnCancel.Name = "kbtnCancel";
+            this.kbtnCancel.Size = new System.Drawing.Size(90, 25);
+            this.kbtnCancel.TabIndex = 1;
+            this.kbtnCancel.Values.Text = "&Cancel";
+            this.kbtnCancel.Click += new System.EventHandler(this.kbtnCancel_Click);
             // 
             // panel1
             // 
@@ -57,19 +73,22 @@ namespace NuGetUploadFileCreator
             // 
             // kryptonPanel2
             // 
-            this.kryptonPanel2.Controls.Add(this.kryptonListBox1);
+            this.kryptonPanel2.Controls.Add(this.klbFiles);
             this.kryptonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel2.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel2.Name = "kryptonPanel2";
             this.kryptonPanel2.Size = new System.Drawing.Size(677, 588);
             this.kryptonPanel2.TabIndex = 3;
             // 
-            // kryptonListBox1
+            // klbFiles
             // 
-            this.kryptonListBox1.Location = new System.Drawing.Point(12, 12);
-            this.kryptonListBox1.Name = "kryptonListBox1";
-            this.kryptonListBox1.Size = new System.Drawing.Size(653, 570);
-            this.kryptonListBox1.TabIndex = 0;
+            this.klbFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.klbFiles.Location = new System.Drawing.Point(12, 12);
+            this.klbFiles.Name = "klbFiles";
+            this.klbFiles.Size = new System.Drawing.Size(653, 570);
+            this.klbFiles.TabIndex = 0;
             // 
             // FileViewer
             // 
@@ -82,6 +101,7 @@ namespace NuGetUploadFileCreator
             this.Name = "FileViewer";
             this.Text = "FileViewer";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
+            this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).EndInit();
             this.kryptonPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -93,6 +113,7 @@ namespace NuGetUploadFileCreator
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.Panel panel1;
         private Krypton.Toolkit.KryptonPanel kryptonPanel2;
-        private Krypton.Toolkit.KryptonListBox kryptonListBox1;
+        private Krypton.Toolkit.KryptonListBox klbFiles;
+        private Krypton.Toolkit.KryptonButton kbtnCancel;
     }
 }
