@@ -43,6 +43,7 @@ namespace NuGetUploadFileCreator
             this.kbtnBrowse = new Krypton.Toolkit.KryptonButton();
             this.ktxtPackagePath = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.kbtnCreateFile = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel2)).BeginInit();
@@ -51,6 +52,7 @@ namespace NuGetUploadFileCreator
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.kbtnCreateFile);
             this.kryptonPanel1.Controls.Add(this.kbtnOpenInExplorer);
             this.kryptonPanel1.Controls.Add(this.kbtnGenerateScript);
             this.kryptonPanel1.Controls.Add(this.kbtnCancel);
@@ -189,6 +191,16 @@ namespace NuGetUploadFileCreator
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "NuGet Package Path:";
             // 
+            // kbtnCreateFile
+            // 
+            this.kbtnCreateFile.Enabled = false;
+            this.kbtnCreateFile.Location = new System.Drawing.Point(326, 8);
+            this.kbtnCreateFile.Name = "kbtnCreateFile";
+            this.kbtnCreateFile.Size = new System.Drawing.Size(81, 25);
+            this.kbtnCreateFile.TabIndex = 3;
+            this.kbtnCreateFile.Values.Text = "Create &File";
+            this.kbtnCreateFile.Click += new System.EventHandler(this.kbtnCreateFile_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -226,6 +238,7 @@ namespace NuGetUploadFileCreator
         private Krypton.Toolkit.KryptonTextBox ktxtPackagePath;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private Krypton.Toolkit.KryptonButton kbtnOpenInExplorer;
+        private Krypton.Toolkit.KryptonButton kbtnCreateFile;
     }
 }
 

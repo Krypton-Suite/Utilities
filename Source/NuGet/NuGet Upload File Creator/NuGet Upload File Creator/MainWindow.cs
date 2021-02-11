@@ -9,6 +9,10 @@ namespace NuGetUploadFileCreator
 {
     public partial class MainWindow : KryptonForm
     {
+        #region Variables
+        private string _scriptFilePath;
+        #endregion
+
         public MainWindow()
         {
             InitializeComponent();
@@ -67,6 +71,15 @@ namespace NuGetUploadFileCreator
             if (ktxtAPIKey.Text == string.Empty)
             {
                 DialogResult result = KryptonMessageBox.Show("No API key has been provided, to upload NuGet packages you'll need a API key.\nDo you want to set one now?", "Generate Script", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.No)
+                {
+                    Utilities.GenerateScript(_scriptFilePath, "<##API-KEY##>");
+                }
+                else
+                {
+                    Utilities.GenerateScript(_scriptFilePath, ktxtAPIKey.Text);
+                }
             }
         }
 
@@ -74,11 +87,33 @@ namespace NuGetUploadFileCreator
         {
             if (ktxtScriptName.Text != string.Empty)
             {
-                kbtnGenerateScript.Enabled = true;
+                kbtnCreateFile.Enabled = true;
             }
             else
             {
-                kbtnGenerateScript.Enabled = false;
+                kbtnCreateFile.Enabled = false;
+            }
+        }
+
+        private void kbtnCreateFile_Click(object sender, EventArgs e)
+        {
+            CommonSaveFileDialog csfd = new CommonSaveFileDialog();
+
+            csfd.Title = "Save script file:";
+
+            csfd.Filters.Add(new CommonFileDialogFilter("Batch Files", "bat, cmd, nt"));
+
+            csfd.DefaultFileName = ktxtScriptName.Text;
+
+            if (csfd.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                _scriptFilePath = Path.GetFullPath(csfd.FileName);
+
+                File.Create(Path.GetFullPath(csfd.FileName));
+
+                kbtnGenerateScript.Enabled = true;
+
+                kbtnCreateFile.Enabled = false;
             }
         }
     }
