@@ -1,7 +1,7 @@
 ﻿
 namespace ThemeShowcase
 {
-    partial class Form1
+    partial class ThemeChanger
     {
         /// <summary>
         ///  Required designer variable.

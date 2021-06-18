@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace ThemeShowcase
 {
-    public partial class Form1 : KryptonForm
+    public partial class ThemeChanger : KryptonForm
     {
         private string _themeFileName;
 
-        public Form1()
+        public ThemeChanger()
         {
             InitializeComponent();
         }
