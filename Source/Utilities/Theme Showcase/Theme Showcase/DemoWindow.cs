@@ -12,9 +12,20 @@ namespace ThemeShowcase
 
         private void changeThemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThemeChanger changer = new ThemeChanger();
+            kpal.Import();
 
-            changer.Show();
+            kman.GlobalPalette = kpal;
+
+            kman.GlobalPaletteMode = PaletteModeManager.Custom;
+
+            kwlThemeDescription.Text = $"Theme: {kpal.GetCustomisedKryptonPaletteFilePath()}";
+        }
+
+        private void resetThemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            kman.GlobalPalette = null;
+
+            kman.GlobalPaletteMode = PaletteModeManager.Office365Blue;
         }
     }
 }
